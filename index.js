@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json({ extended: true }))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '/build')));
+
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }
@@ -25,6 +25,8 @@ connection.once('open', () => {
 formRoutes = (require("./routes/formRoutes"))
 
 app.use(formRoutes);
+
+app.use(express.static(path.join(__dirname, '/build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/build/index.html'));
