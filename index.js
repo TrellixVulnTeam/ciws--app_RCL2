@@ -14,7 +14,6 @@ app.use(bodyParser.json({ extended: true }))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
-
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }
 );
