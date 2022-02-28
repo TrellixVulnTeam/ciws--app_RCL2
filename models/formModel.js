@@ -205,8 +205,9 @@ const formSchema = new Schema({
     },
     signature: {
         type: String
-    }
-});
+    }, 
+},
+{ timestamps: true });
 
 const Form = mongoose.model('Form', formSchema);
 
