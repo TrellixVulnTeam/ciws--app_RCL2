@@ -22,8 +22,10 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 formRoutes = (require("./routes/formRoutes"))
+partRoutes = (require("./routes/partRoutes"))
 
 app.use(formRoutes);
+app.use(partRoutes);
 
 app.use(express.static(path.join(__dirname, '/build')));
 
